@@ -17,7 +17,9 @@ class QuestionsController < ApplicationController
       render "new"
    end
   end
-
+  def show
+    @question = Question.all
+  end
   def edit
     @user = User.find(params[:user_id])
     @question = Question.find(params[:id])

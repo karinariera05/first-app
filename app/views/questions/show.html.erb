@@ -1,0 +1,19 @@
+<h3>Questions</h3>
+
+
+<hr />
+<ul style="list-style: none; padding: 0px;">
+ 
+   
+    <li>
+      <% @question.each do |question| %>
+            <tr>
+             <div> <%= simple_format question.description %> </div>
+            </tr>
+          <% end %>
+         <p> 
+          
+         </p>
+         <hr />
+    </li>
+    

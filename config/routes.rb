@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'questions/new'
 
+  get 'questions/show'
+
+
   get 'questions/create'
 
   get 'questions/edit'
@@ -14,6 +17,9 @@ Rails.application.routes.draw do
     resources :questions
   end
   get 'view_questions', to: 'user#show', as: 'view_questions'
+  get 'questions', to: 'questions#show', as: :questions
+
+
   #get 'welcome/index'
 
   #devise_for :models

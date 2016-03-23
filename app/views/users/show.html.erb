@@ -6,9 +6,9 @@
 <hr />
 <ul style="list-style: none; padding: 0px;">
  
-   <% @question.each do |question| %>
+   <% @user.questions.each do |question| %>
     <li>
-       <div> <%= simple_format @user.description %> </div>
+       <div> <%= simple_format question.description %> </div>
          <p> 
           <%= link_to "Editar", edit_user_question_path(@user, question) %>
           | 
@@ -17,6 +17,8 @@
          <hr />
     </li>
    <% end %>
+
+   
  
   
 

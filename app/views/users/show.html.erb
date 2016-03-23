@@ -1,0 +1,24 @@
+
+<h3>User</h3>
+
+<p>Email: <%= @user.email if @user.email %></p>
+<p> <%= link_to "Agregar una pregunta", new_user_question_path(@user) %> | <%= link_to "Volver", users_path %> </p>
+<hr />
+<ul style="list-style: none; padding: 0px;">
+ 
+   <% @question.each do |question| %>
+    <li>
+       <div> <%= simple_format @user.description %> </div>
+         <p> 
+          <%= link_to "Editar", edit_user_question_path(@user, question) %>
+          | 
+          <%= link_to "Eliminar", user_question_path(@user, question), :confirm => "Seguro desea eliminar esta pregunta?", :method => :delete %> 
+         </p>
+         <hr />
+    </li>
+   <% end %>
+ 
+  
+
+</ul>
+

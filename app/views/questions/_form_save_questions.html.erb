@@ -1,0 +1,12 @@
+<%= form_for([@user, @question]) do |f| %>
+   <% if @question.errors.any? %>
+      <ul>
+         <% @question.errors.each do |atributo, description| %>
+         <li> <%= description %> </li>
+         <% end %>
+      </ul>
+   <% end %>
+   <%= f.text_area :description, {:value => @description} %>
+   <br />
+   <%= f.submit "Enviar" %> <%= link_to "Volver", @user %>
+<% end %>

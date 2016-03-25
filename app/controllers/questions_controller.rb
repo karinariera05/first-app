@@ -3,7 +3,10 @@ class QuestionsController < ApplicationController
     @user = User.find(params[:user_id])
     @question = Question.new
   end
-
+ def index
+    @question = Question.all
+  
+ end
   def create
     @description = params[:question][:description]
     @user = User.find(params[:user_id])
@@ -18,6 +21,7 @@ class QuestionsController < ApplicationController
    end
   end
   def show
+    
     @question = Question.all
   end
   def edit

@@ -10,11 +10,19 @@ class UsersController < ActionController::Base
   end
 
   def show
+   if user_signed_in?
     @questions = Question.all
     @user = User.find(params[:id])
     @questions = Question.select("id, description").where(:user_id => params[:id])
     unless @user == current_user
-      redirect_to :back, :alert => "Access denied." 
+      redirect_to :back, :alert => "Access denied."
+   else
+     
+     #@questions = Question.all
+     @user = User.find(params[:id])
+     @questions = Question.select("id, description").distinct(:user_id => params[:id])
+    
+   end    
      
   end
   end

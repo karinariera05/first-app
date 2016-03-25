@@ -1,0 +1,18 @@
+<div class="container image-backgound">
+  <div class="row">
+    <h3>Questions</h3>
+    
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @question.each do |question| %>
+            <tr>
+              <%= render question %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

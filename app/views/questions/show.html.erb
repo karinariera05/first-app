@@ -8,7 +8,10 @@
     <li>
       <% @question.each do |question| %>
             <tr>
-             <div> <%= simple_format question.description %> </div>
+             <div class="col s12 m4 l2 center"> 
+                <p class="z-depth-2">                            </p>
+                <%= simple_format question.description %> 
+             </div>
             </tr>
           <% end %>
          <p> 

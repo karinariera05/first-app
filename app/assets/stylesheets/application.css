@@ -12,21 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ 
  */
- @import "materialize-src";
- body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
+ @import "materialize-sass";
 
-main {
-  flex: 1 0 auto;
-}
 
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
-}

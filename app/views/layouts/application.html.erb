@@ -12,29 +12,24 @@
   <%= csrf_meta_tags %>
 
 </head>
-<body>
+
+  <body class="body-home">
 	   <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+     <p class="alert"><%= alert %></p>
 
    <% if user_signed_in? %>
-      <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-      <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
-      <li><%=link_to  'Ver todas las preguntas',  questions_path %></li>
+         <%= render :partial => 'layouts/nav' %>
+      
    <% else %>
-      <li><%= link_to 'Sign in', new_user_session_path %></li>
-      <li><%= link_to 'Sign up', new_user_registration_path %></li>
+          <%= render 'layouts/sigin' %>
+      
    <% end %>
-   <% if user_signed_in? %>
-      <li><%= link_to 'Users', users_path %></li>
-      <li><%=link_to  'Ver mis preguntas', user_path(current_user)%></li>
-
-     
-   <% end %>
+   
 
 <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
-<%= yield %>
+  <%= yield %>
 
-</body>
+</div> 
 </html>

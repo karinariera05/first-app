@@ -1,38 +1,41 @@
+<div class="row">
+  <h3>Sus preguntas</h3>
+  <div class="col s12">
 
-<h3>Sus preguntas</h3>
-
-<p>Email: <%= @user.email if @user.email %></p>
-<p> <%= link_to "Agregar una pregunta", new_user_question_path(@user) %> | <%= link_to "Volver", users_path %> </p>
-<hr />
-
-
+  <p>Email: <%= @user.email if @user.email %></p>
+  <p> <%= link_to "Agregar una pregunta", new_user_question_path(@user) %> | <%= link_to "Volver", users_path %> </p>
  
+  </div>
+
+  
    <% @user.questions.each do |question| %>
-    <div class="container">
-       <div class="card-panel teal lighten-2 row valign-wrapper"> 
-          <div class="col s12 m4 l2">
-           <%=  question.description %> 
-          </div> 
-       </div>
-         <p class="z-depth-2"> 
+   <div class="col s12 m4 l8 grey lighten-2 card-panel teal">
+      <%=  question.description %> 
+         <p> 
           <%= link_to "Editar", edit_user_question_path(@user, question), class: 'btn-large waves-effect waves-light' %>
-          | 
-          <%= link_to "Eliminar", user_question_path(@user, question), :confirm => "Seguro desea eliminar esta pregunta?", :method => :delete %> 
-         </p>
-         <hr />
-    </div>
+           
+          <%= link_to "Eliminar", user_question_path(@user, question), :confirm => "Seguro desea eliminar esta pregunta?",class: 'btn-large waves-effect waves-light', :method => :delete %> 
+         </p>     
+  </div>
    <% end %>
+</div> 
+<div class="row"> 
+   <div class="col s12 ">
    <h3>Todas las preguntas</h3>
+   </div> 
+   
 
    <% @questions.each do |question| %>
-    <li>
-       <div> <%= simple_format question.description %> </div>
-         <p> 
-          
-         </p>
-         <hr />
-    </li>
+    <div class="col s12 m4 l8 grey lighten-2 card-panel teal">
+    
+        <%=  question.description %>
+    </div>
+        
+         
+   
    <% end %>
+   
+</div>   
 
 
 

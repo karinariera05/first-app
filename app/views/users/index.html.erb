@@ -1,16 +1,24 @@
-<div class="container image-backgound">
+<div>
   <div class="row">
-    <h3>Users</h3>
+    
     
     <div class="column">
-      <table class="table">
-        <tbody>
+        
+      <table class="striped"> 
+        <thead>
+          <h3>Users</h3>
+        <thead>
+        
           <% @users.each do |user| %>
+          <tbody>
             <tr>
-              <%= render user %>
+              <td>
+                <%= render user %>
+              </td>
             </tr>
+        
           <% end %>
-        </tbody>
+       </tbody>
       </table>
     </div>
   </div>

@@ -1,31 +1,24 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   
-
   def index
- 
-    @users = User.all
-    
-    
+    @users = User.all 
   end
 
-  def show
-   if user_signed_in?
+  def show 
     @questions = Question.all
     @user = User.find(params[:id])
     @questions = Question.select("id, description").where(:user_id => params[:id])
     unless @user == current_user
-      redirect_to :back, :alert => "Access denied."
-   else
-     
-     #@questions = Question.all
-     @user = User.find(params[:id])
-     @questions = Question.select("id, description").distinct(:user_id => params[:id])
-    
-   end    
-     
+      redirect_to :back, :alert => "Access denied."      
+   end
   end
-  end
+
+  def question_user
+      @questions = Question.all
+      @user = User.find(params[:id])
+      @questions = Question.select("id, description")
+  end  
 private
 
   def user_params

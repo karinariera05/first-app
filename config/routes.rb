@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
   get 'view_questions', to: 'user#show', as: 'view_questions'
   get 'questions', to: 'questions#show', as: :questions
+  get 'question_user', to: 'users#question_user', as: :question_user
 
 
   #get 'welcome/index'

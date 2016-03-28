@@ -6,12 +6,13 @@
       <li><%= link_to  'Ver todas las preguntas',  questions_path %></li>
       <li><%= link_to 'Users', users_path %></li>
       <li><%=link_to  'Ver mis preguntas', user_path(current_user)%></li>
+      <li><%=link_to  'Ver mis preguntas y las de los demas usuarios', question_user_path%></li>
      </ul>
     <nav>
       <div class="nav-wrapper nav-color">
          <a href="#!" class="brand-logo">Logo</a>
         <!-- Dropdown Trigger -->
-        <li><a class="dropdown-button right text-option" href="#!" data-activates="dropdown1">Opciones<i class="material-icons right"></i></a></li>
+        <li><a class="dropdown-button right text-option" href="#!" data-activates="dropdown1">Opciones<i class="material-icons right options-style"></i></a></li>
      </ul>
      </div>
     </nav>

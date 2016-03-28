@@ -13,18 +13,16 @@
 </head>
 
   <body class="body-home">
-	   <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p>
-
-   <% if user_signed_in? %>
-         <%= render :partial => 'layouts/nav' %>
+    <% if user_signed_in? %>
+        <%= render :partial => 'layouts/nav' %>
       
-   <% else %>
-          <%= render 'layouts/sigin' %>
+    <% else %>
+        <%= render 'layouts/sigin' %>
       
-   <% end %>
+    <% end %>
    
-
+   <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
 <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
